@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: myapache2 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapache2
+  template:
+    metadata:
+      labels:
+        app: myapache2 
+    spec:
+      containers:
+        - name: myapache2 
+          image: assignmentselise.azurecr.io/myapache2
+          ports:
+          - containerPort: 80
